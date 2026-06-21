@@ -25,25 +25,25 @@ const CHORES_METADATA: Record<ChoreKey, { title: string; emoji: string; color: s
     title: "Varrer",
     emoji: "🧹",
     color: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20",
-    desc: "Varrer a sujidade solta, tirar teias de aranha e limpar os cantos"
+    desc: "Tirar teias de aranha"
   },
   mopping: {
     title: "Pano Molhado",
     emoji: "🧼",
     color: "text-fuchsia-400 border-fuchsia-500/30 bg-fuchsia-950/20",
-    desc: "Passar a esfregona nos mosaicos com desinfetante multiusos"
+    desc: "Passar a esfregona"
   },
   dusting: {
     title: "Limpar o Pó",
     emoji: "💨",
     color: "text-amber-400 border-amber-500/30 bg-amber-950/20",
-    desc: "Limpar a consola da TV, ecrãs, ventiladores e setups"
+    desc: "Limpar os vidros"
   },
   vacuuming: {
     title: "Aspirar",
     emoji: "⚡️",
     color: "text-green-400 border-green-500/30 bg-green-950/20",
-    desc: "Aspirar carpetes, tapetes, dobras do sofá e rodapés"
+    desc: "Aspirar tapetes"
   }
 };
 
