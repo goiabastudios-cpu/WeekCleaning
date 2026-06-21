@@ -22,13 +22,13 @@ import {
 // Chores mapping with icons and description emojis
 const CHORES_METADATA: Record<ChoreKey, { title: string; emoji: string; color: string; desc: string }> = {
   brushing: {
-    title: "Varrer o Chão",
+    title: "Varrer",
     emoji: "🧹",
     color: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20",
     desc: "Varrer a sujidade solta, tirar teias de aranha e limpar os cantos"
   },
   mopping: {
-    title: "Lavar o Chão",
+    title: "Pano Molhado",
     emoji: "🧼",
     color: "text-fuchsia-400 border-fuchsia-500/30 bg-fuchsia-950/20",
     desc: "Passar a esfregona nos mosaicos com desinfetante multiusos"
@@ -40,7 +40,7 @@ const CHORES_METADATA: Record<ChoreKey, { title: string; emoji: string; color: s
     desc: "Limpar a consola da TV, ecrãs, ventiladores e setups"
   },
   vacuuming: {
-    title: "Aspirar Tapetes",
+    title: "Aspirar",
     emoji: "⚡️",
     color: "text-green-400 border-green-500/30 bg-green-950/20",
     desc: "Aspirar carpetes, tapetes, dobras do sofá e rodapés"
@@ -53,7 +53,7 @@ export default function App() {
   // --- BROTHERS NAME STATE ---
   const [brotherNames, setBrotherNames] = useState<string[]>(() => {
     const saved = localStorage.getItem('weekend_cleaning_brothers');
-    return saved ? JSON.parse(saved) : ['Liam', 'Noah', 'Oliver', 'Elijah'];
+    return saved ? JSON.parse(saved) : ['Pedro', 'Miguel', 'Luís', 'Rebeca'];
   });
 
   // --- PRESENT REGISTER COUNT ---
@@ -109,9 +109,9 @@ export default function App() {
     const year = sat.getFullYear();
 
     if (satM === sunM) {
-      return `Fim de semana de ${satD} a ${sunD} de ${satM}, ${year}`;
+      return `Dia ${sunD} de ${satM}, ${year}`;
     }
-    return `Fim de semana de ${satD} de ${satM} a ${sunD} de ${sunM}, ${year}`;
+    return `Dia ${sunD} de ${sunM}, ${year}`;
   };
 
   const saveSettings = (e: React.FormEvent) => {
@@ -154,10 +154,10 @@ export default function App() {
           <span className="text-2xl">⚡️</span>
           <div>
             <h1 className="text-xl font-black tracking-tight text-white uppercase text-glow-cyan">
-              CYBER NEON
+              ALMEIDA COSTA Lda
             </h1>
             <p className="text-[10px] font-mono tracking-widest text-cyan-400 uppercase">
-              🧹 ROTAÇÃO DE LIMPEZA
+              🧹 LIMPEZA SEMANAL
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function App() {
           </div>
 
           <h2 className="text-lg font-bold text-white text-center tracking-tight mb-5 flex items-center justify-center gap-1.5">
-            👾 <span>ROTAÇÃO DE FIM DE SEMANA</span>
+            👾 <span>ROTAÇÃO SEMANAL</span>
           </h2>
 
           {/* Sibling names marquee summary */}
@@ -212,7 +212,7 @@ export default function App() {
           <div className="mb-6 p-4 rounded-2xl bg-slate-900/60 border border-slate-800">
             <div className="flex items-center justify-between mb-3.5">
               <span className="text-xs font-mono tracking-wider font-semibold text-slate-400">
-                ⚡️ IRMÃOS ATIVOS
+                ⚡️ IRMONES ATIVOS
               </span>
               <span className="text-xs font-mono font-bold text-glow-cyan text-cyan-400">
                 {presentCount} PRESENTES
@@ -231,7 +231,7 @@ export default function App() {
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
-                🍿 Modo 3 Irmãos
+                🍿 3 Irmãos
               </button>
               <button
                 id="toggle-mode-4"
@@ -243,7 +243,7 @@ export default function App() {
                     : 'text-slate-400 hover:text-white'
                 }`}
               >
-                🦁 Modo 4 Irmãos
+                🦁 4 Irmãos
               </button>
             </div>
 
@@ -251,7 +251,7 @@ export default function App() {
             {presentCount === 3 && (
               <div className="mt-4 pt-3.5 border-t border-slate-800/80 animate-fadeIn">
                 <span className="block text-[10px] font-mono tracking-wider text-rose-500 font-bold mb-2">
-                  🏖️ ESCOLHE QUEM ESTÁ DE QUARENTENA/FOLGA:
+                  🏖️ ESCOLHE QUEM ESTÁ OFF:
                 </span>
                 <div className="grid grid-cols-4 gap-1.5">
                   {brotherNames.map((name, idx) => (
@@ -287,7 +287,7 @@ export default function App() {
 
             <div className="text-center">
               <span className="block text-[9px] font-mono font-bold tracking-widest text-cyan-400 uppercase text-glow-cyan">
-                COBERTURA DA LIMPEZA
+                DIA DA LIMPEZA
               </span>
               <span className="text-xs font-bold text-slate-100 flex items-center justify-center gap-1.5 mt-0.5">
                 📅 {getFormattedDate()}
@@ -312,7 +312,7 @@ export default function App() {
           >
             {/* Gloss shine reflection effect */}
             <div className="absolute inset-0 w-1/2 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:animate-[shine_0.75s_ease-in-out_forwards]" />
-            ✨ REVELAR TAREFAS DESTE FIM DE SEMANA ✨
+            ✨ REVELAR TAREFAS ✨
           </button>
 
           {/* Go Back to Current Week helper */}
@@ -322,7 +322,7 @@ export default function App() {
               onClick={() => setWeekOffset(0)}
               className="w-full text-center text-[10px] font-mono tracking-widest text-pink-400 hover:text-pink-300 hover:underline mt-4 uppercase block"
             >
-              ↩ Voltar ao Fim de Semana Atual
+              ↩ Voltar a Hoje
             </button>
           )}
 
@@ -331,8 +331,8 @@ export default function App() {
 
       {/* FOOTER METRIC */}
       <footer className="relative z-10 mt-auto text-center py-6 text-[10px] font-mono text-slate-500 tracking-wider">
-        <p>RELAÇÃO DA ROTAÇÃO EM CADEIA • ATUALIZAÇÃO SEMANAL AUTOMÁTICA</p>
-        <p className="text-slate-600 mt-1">Módulo do Ciclo: {((activeWeekIndex % 4) + 4) % 4}</p>
+        <p>ROTAÇÃO SEMANAL AUTOMÁTICA • ALMEIDA COSTA</p>
+        <p className="text-slate-600 mt-1">Versão: {((activeWeekIndex % 4) + 4) % 4}</p>
       </footer>
 
       {/* RENDER POPUP SCHEDULE DIALOG */}
@@ -346,10 +346,10 @@ export default function App() {
             <div className="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
               <div>
                 <span className="text-[10px] font-mono tracking-widest text-fuchsia-400 font-bold uppercase text-glow-pink">
-                  REVELAR ESCALA
+                  REVELAR ORDEM
                 </span>
                 <h3 className="text-xl font-black text-white tracking-tight flex items-center gap-1.5 mt-0.5">
-                  🧹 ESCALA DO FIM DE SEMANA
+                  🧹 ORDEM DO FIM DE SEMANA
                 </h3>
               </div>
               <button
@@ -455,7 +455,7 @@ export default function App() {
                   CONFIGURAÇÕES
                 </span>
                 <h3 className="text-xl font-black text-white tracking-tight flex items-center gap-1.5 mt-0.5">
-                  📝 EDITAR IRMÃOS
+                  📝 EDITAR NOMES
                 </h3>
               </div>
               <button
@@ -524,7 +524,7 @@ export default function App() {
                 type="submit"
                 className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-cyan-500 rounded-xl hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-black text-xs transition-all shadow-[0_0_15px_rgba(6,182,212,0.4)]"
               >
-                GRAVAR APARATO
+                GRAVAR
               </button>
             </div>
           </form>
