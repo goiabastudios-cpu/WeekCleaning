@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-cyber-bg: #05070f;
+  --color-cyber-dark: #0b0e1b;
+  --color-neon-cyan: #00f3ff;
+  --color-neon-pink: #ff005b;
+  --color-neon-purple: #9d00ff;
+  --color-neon-green: #39ff14;
+  --color-neon-yellow: #ffe600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes pulseNeon {
+  0% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 20px rgba(0, 243, 255, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(0, 243, 255, 0.7), 0 0 35px rgba(0, 243, 255, 0.4); }
+  100% { box-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 20px rgba(0, 243, 255, 0.2); }
+}
+
+@keyframes pulseNeonPink {
+  0% { box-shadow: 0 0 10px rgba(255, 0, 91, 0.4), 0 0 20px rgba(255, 0, 91, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 91, 0.7), 0 0 35px rgba(255, 0, 91, 0.4); }
+  100% { box-shadow: 0 0 10px rgba(255, 0, 91, 0.4), 0 0 20px rgba(255, 0, 91, 0.2); }
+}
+
+@keyframes cyberGrid {
+  from { background-position: 0 0; }
+  to { background-position: 0 40px; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-pulseNeon {
+  animation: pulseNeon 3s infinite ease-in-out;
+}
+
+.animate-pulseNeonPink {
+  animation: pulseNeonPink 3s infinite ease-in-out;
+}
+
+.cyber-grid-overlay {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  animation: cyberGrid 20s linear infinite;
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6), 0 0 15px rgba(0, 243, 255, 0.3);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 8px rgba(255, 0, 91, 0.6), 0 0 15px rgba(255, 0, 91, 0.3);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 8px rgba(255, 230, 0, 0.6), 0 0 15px rgba(255, 230, 0, 0.3);
+}
+

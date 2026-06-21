@@ -1,0 +1,6 @@
+{
+  "name": "Weekend Cleaning Rotation",
+  "description": "An elegant, minimalist schedule rotation tracker for simple and structured weekend household cleaning duties among brothers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
